@@ -1,6 +1,8 @@
 package sfl.api.wl.controller;
 
 
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import sfl.api.wl.entity.Wishlist;
 import sfl.api.wl.entity.WishlistItem;
+import sfl.api.wl.entity.wliID;
 import sfl.api.wl.repository.WishlistItemRepository;
 import sfl.api.wl.repository.WishlistRepository;
 
@@ -51,9 +54,9 @@ public class APIWishlistController {
 
 	@PostMapping("/{id}/add")
 	public Object addItem(@PathVariable("id") Integer id,  @RequestBody WishlistItem wli) {
-		log.info("POST su WL "+id);
 		return wlRepo.findById(id).map(w -> {
-            wli.setWishlistId(id);
+            wliID wid = new wliID(wli.getId().getItemId(),id);
+			wli.setId(wid);
             return wliRepo.save(wli);
         });
 				

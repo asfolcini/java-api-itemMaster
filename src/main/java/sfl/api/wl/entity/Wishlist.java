@@ -4,23 +4,17 @@
 package sfl.api.wl.entity;
 
 
-import java.io.Serializable;
-import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.hibernate.annotations.CreationTimestamp;
 
 /**
  * @author alberto.sfolcini
@@ -43,7 +37,7 @@ public class Wishlist extends BaseEntity{
 
 
 
-	@OneToMany(mappedBy = "wishlistId", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "id.wishlistId", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<WishlistItem> items = new HashSet<WishlistItem>();
  
 	
