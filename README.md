@@ -19,3 +19,7 @@ spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 # PROD PURPOSE
 spring.jpa.hibernate.ddl-auto=validate
 ```
+
+
+### Docker Hub automatic building
+Since DockerHub dosen't allow to specify a folder for building the docker image, both Dockerfile and jar file have been located inside the root folder.
