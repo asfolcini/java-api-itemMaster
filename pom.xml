@@ -68,7 +68,7 @@
 			                <goal>repackage</goal>
 			            </goals>
 			            <configuration>
-			                <mainClass>sfl.api.APIWishlistApplication</mainClass>
+			                <mainClass>sfl.api.wl.APIWishlistApplication</mainClass>
 			                <outputDirectory>${project.basedir}/</outputDirectory>
 			            </configuration>
 			        </execution>
