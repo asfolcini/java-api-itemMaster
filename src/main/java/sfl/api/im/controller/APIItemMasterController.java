@@ -30,17 +30,20 @@ public class APIItemMasterController {
 		String page = params.get("page");
 		String itemsPerPage = params.get("itemsPerPage");
 		String tableFilter = params.get("tableFilterValue");
-		
+		if (itemsPerPage==null)
+			itemsPerPage = "5";
+		if (page==null)
+			page = "1";
 		return imRepo.findAll(Integer.valueOf(page), Integer.valueOf(itemsPerPage),tableFilter);
 	}
 
 
-	@GetMapping("/{sku}")
+	@GetMapping("/sku/{sku}")
 	public Object getItemBySKU(@PathVariable("sku") String sku) {
 		return imRepo.findBySKU(sku);
 	}
 	
-	@GetMapping("/{gtin}")
+	@GetMapping("/gtin/{gtin}")
 	public Object getItemByGTIN(@PathVariable("gtin") String gtin) {
 		return imRepo.findByGTIN(gtin);
 	}
