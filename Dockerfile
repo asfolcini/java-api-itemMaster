@@ -2,7 +2,7 @@
 FROM openjdk:8-jre-alpine
 
 # Copy war file
-COPY Wishlist-0.0.1-SNAPSHOT.jar /api.war
+COPY ItemMaster-0.0.1-SNAPSHOT.jar /api.war
 
 # run the app
 CMD ["/usr/bin/java", "-jar", "/api.war"]
