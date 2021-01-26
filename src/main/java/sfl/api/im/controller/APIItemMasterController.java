@@ -40,5 +40,8 @@ public class APIItemMasterController {
 		return imRepo.findBySKU(sku);
 	}
 	
-	
+	@GetMapping("/{gtin}")
+	public Object getItemByGTIN(@PathVariable("gtin") String gtin) {
+		return imRepo.findByGTIN(gtin);
+	}
 }

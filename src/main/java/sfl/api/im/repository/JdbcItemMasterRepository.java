@@ -119,7 +119,7 @@ public class JdbcItemMasterRepository implements IItemMaster {
 	}
 
 	@Override
-	public Optional<ItemMaster> findByGTIN(String GTIN) {
+	public List<ItemMaster> findByGTIN(String GTIN) {
 		// TODO Auto-generated method stub
 		return null;
 	}

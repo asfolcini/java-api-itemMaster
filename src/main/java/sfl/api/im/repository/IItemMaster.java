@@ -19,6 +19,6 @@ public interface IItemMaster {
 
 	    List<ItemMaster> findBySKU(String SKU);
 	    
-	    Optional<ItemMaster> findByGTIN(String GTIN);
+	    List<ItemMaster> findByGTIN(String GTIN);
 
 }
